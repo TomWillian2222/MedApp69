@@ -158,7 +158,8 @@ height: 100%;
     </style>
 </head>
 <body>
-<div class="area"></div>
+<div class="area">
+</div>
 <nav class="main-menu">
     <ul>
         <li>
@@ -209,6 +210,39 @@ height: 100%;
     </ul>
 </nav>
 <div id="mainFrame" class="container">
+    <button id="openPopup">
+        <i class="fab fa-whatsapp-square" style="color: #17dd13;"></i>
+    </button>
+
+    <!-- Pop-up -->
+    <div id="popup" style="display: none;" class="popup">
+        <form id="complaintForm">
+            <textarea id="complaintText" placeholder="Digite sua reclamação"></textarea>
+            <button type="button" id="sendComplaint">Enviar</button>
+            <button type="button" id="closePopup">Fechar</button>
+        </form>
+    </div>
 </div>
+<script>
+
+        document.getElementById('openPopup').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'block';
+        });
+
+
+        document.getElementById('closePopup').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+        });
+
+
+        document.getElementById('sendComplaint').addEventListener('click', function() {
+
+            var complaintText = document.getElementById('complaintText').value;
+            console.log('Reclamação enviada:', complaintText);
+
+
+
+        });
+    </script>
 </body>
 </html>
